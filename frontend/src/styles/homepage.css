@@ -1,0 +1,24 @@
+.home-container {
+    text-align: center;
+    padding: 50px;
+  }
+  
+  .home-title {
+    font-size: 2rem;
+    color: #333;
+  }
+
+  .home-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 화면 전체를 차지하도록 설정 */
+  }
+  
+  .home-main {
+    flex-grow: 1; /* main 영역이 유동적으로 확장되도록 설정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
