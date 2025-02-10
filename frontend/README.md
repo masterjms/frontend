@@ -1,4 +1,12 @@
 # React + TypeScript + Vite
+# 터미널에서 다운 받아야할 기본 설정
+1. <code>npm install next react react-dom</code>
+2. <code>npm install primereact primeicons</code>
+3. <code>npm install quill</code>
+4. <code>npm install react-router-dom</code>
+5. <code>npm run build</code>
+6. <code>npm run dev</code>
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
