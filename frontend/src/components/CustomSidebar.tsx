@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Sidebar } from 'primereact/sidebar';
 import { Button } from 'primereact/button';
 
-export default function BasicDemo() {
+export default function BasicDemo({ children }) {
     const [visible, setVisible] = useState<boolean>(false);
 
     return (
@@ -10,7 +10,7 @@ export default function BasicDemo() {
             <Sidebar visible={visible} onHide={() => setVisible(false)}>
                 <h2>Sidebar</h2>
                 <p>
-                    사이드바 세부 기능 예정
+                    { children }
                 </p>
             </Sidebar>
             <Button icon="pi pi-arrow-right" onClick={() => setVisible(true)} />

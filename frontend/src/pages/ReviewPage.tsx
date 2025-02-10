@@ -4,6 +4,7 @@ import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 import { Editor } from 'primereact/editor';
 import CustomSidebar from '../components/CustomSidebar'; // 사이드바 추가
+import HistoryTab from "../components/HistoryTab";
 
 const ReviewPage: React.FC = () => {
   const [code, setCode] = useState<string>(''); // 코드 입력 상태
@@ -14,13 +15,44 @@ const ReviewPage: React.FC = () => {
     console.log('Code submitted for review:', code);
     setReviewResult('✔ Code is clean and optimized! ✅'); // TODO: 백엔드 API 연동 예정
   };
-
+  const dataList= {
+    "소수찾기": [
+      {
+        "type": 1,
+        "name": "알고리즘 풀이",
+      },
+      {
+        "type": 1,
+        "name": "알고리즘 풀이 2차",
+      },
+      {
+        "type": 2,
+        "name": "최적화 방법",
+      }
+    ],
+    "짝수찾기": [
+      {
+        "type": 2,
+        "name": "최적화 방법",
+      },
+    ],
+    "dfs 응용": [
+      {
+        "type": 1,
+        "name": "완전 멘붕...",
+      },
+      {
+        "type": 2,
+        "name": "그치만 해냈쥬?ㅋㅋ"
+      },
+    ],
+  };
   return (
     <div className="review-page">
       <h1 className="review-title">Code Review</h1>
 
       {/* ✅ CustomSidebar 적용 */}
-      <CustomSidebar />
+      <CustomSidebar><HistoryTab data={dataList} /></CustomSidebar>
 
       {/* ✅ 코드 입력과 결과를 가로로 배치 */}
       <div className="code-container">
