@@ -5,6 +5,7 @@ import ReviewLayout from './layouts/ReviewLayout';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import ReviewPage from './pages/ReviewPage';
+import LoginLayout from './layouts/LoginLayout';
 
 const App: React.FC = () => {
   return (
@@ -14,7 +15,7 @@ const App: React.FC = () => {
         <Route path="/" element={<HomeLayout><HomePage /></HomeLayout>} />
         
         {/* LoginPage - HomeLayout 사용 */}
-        <Route path="/login" element={<HomeLayout><LoginPage /></HomeLayout>} />
+        <Route path="/login" element={<LoginLayout><LoginPage /></LoginLayout>} />
         
         {/* ReviewPage - ReviewLayout 사용 */}
         <Route path="/review" element={<ReviewLayout><ReviewPage /></ReviewLayout>} />

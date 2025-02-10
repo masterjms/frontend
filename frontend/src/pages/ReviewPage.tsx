@@ -3,7 +3,8 @@ import '../styles/review.css';
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 import { Editor } from 'primereact/editor';
-import CustomSidebar from '../components/CustomSidebar'; // 사이드바 추가
+import UrlOrFileUploader from '../components/UrlOrFileUploader';
+import StepSelector from '../components/StepSelector';
 
 const ReviewPage: React.FC = () => {
   const [code, setCode] = useState<string>(''); // 코드 입력 상태
@@ -17,13 +18,19 @@ const ReviewPage: React.FC = () => {
 
   return (
     <div className="review-page">
-      <h1 className="review-title">Code Review</h1>
-
-      {/* ✅ CustomSidebar 적용 */}
-      <CustomSidebar />
+      <div className='review-input1'>
+        <div className='url-input'>
+          <UrlOrFileUploader />
+        </div>
+        <div className='step-input'>
+          <StepSelector />
+        </div>
+        
+      </div>
+      
 
       {/* ✅ 코드 입력과 결과를 가로로 배치 */}
-      <div className="code-container">
+      <div className="code-container" style={{ display: "flex" }}>
         {/* 코드 입력 (왼쪽) */}
         <Card className="code-input">
           <h3>Enter Your Code</h3>
@@ -42,7 +49,9 @@ const ReviewPage: React.FC = () => {
       </div>
 
       {/* 코드 검사 버튼 (아래) */}
+      <div className='review-button'>
       <Button label="Run Review" icon="pi pi-search" className="p-button-lg p-button-primary review-button" onClick={handleReview} />
+      </div>
     </div>
   );
 };
